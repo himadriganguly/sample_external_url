@@ -120,6 +120,8 @@ The file contains following segments:-
 
 2. **Deployment** - This contains the **k8s** deployment of the application. The **POD** refers to the **configmap** for the configuration. Image used for the **POD** is **image: himadriganguly/sample_external_url**, change that according to your registry url.
 
+**Note:-** DockerHub URL [https://hub.docker.com/r/himadriganguly/sample_external_url](https://hub.docker.com/r/himadriganguly/sample_external_url)
+
 3. **Service** - This will expose the application as **ClusterIP** on **port 80** and **targetPort 8080**. Change the **targetPort** value according to the **PORT** value in **configmap**.
 
 ### Deploy The Application
