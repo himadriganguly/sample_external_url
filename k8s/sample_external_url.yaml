@@ -1,0 +1,58 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sample-external-url-configmap
+data:
+  URLS: "https://httpstat.us/503,https://httpstat.us/200"
+  TIMEOUT: "2"
+  PORT: "8080"
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-external-url-deploy
+  labels:
+    app: sample-external-url-python
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sample-external-url
+  template:
+    metadata:
+      labels:
+        app: sample-external-url
+    spec:
+      containers:
+      - name: sample-external-url
+        image: himadriganguly/sample_external_url
+        env:
+        - name: URLS
+          valueFrom:
+            configMapKeyRef:
+              name: sample-external-url-configmap
+              key: URLS
+        - name: TIMEOUT
+          valueFrom:
+            configMapKeyRef:
+              name: sample-external-url-configmap
+              key: TIMEOUT
+        - name: PORT
+          valueFrom:
+            configMapKeyRef:
+              name: sample-external-url-configmap
+              key: PORT
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sample-external-url-service
+spec:
+  selector:
+    app: sample-external-url
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
