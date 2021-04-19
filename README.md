@@ -21,6 +21,7 @@ cd sample_external_url
 ```
 
 1. Create and activate a virtual environment
+
 `Linux`
 
 ```
