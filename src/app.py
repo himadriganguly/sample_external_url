@@ -61,9 +61,7 @@ if __name__ == '__main__':
         httpd.serve_forever()
     except KeyboardInterrupt as err:
         print("Shuting Down App. Good Bye!")
-        httpd.server_close()
         exit(0)
     except Exception as err:
         print("Error ocurred: ", err)
-        httpd.server_close()
         exit(1)
