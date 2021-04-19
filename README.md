@@ -49,6 +49,7 @@ pytest
 ```
 
 4. Export environment variables for the application
+
 `Linux`
 
 ```
@@ -102,7 +103,7 @@ To see the metrics point your browser to [http://localhost:8080/metrics](http://
 docker login
 ```
 
-5. Push the image to **DockerHub** or your preferred docker registry
+5. Push the image to **DockerHub** or to your preferred docker registry
 
 ```
 docker tag sample_external_url:latest [USERNAME]/sample_external_url:latest
@@ -119,7 +120,7 @@ The file contains following segments:-
 
 2. **Deployment** - This contains the **k8s** deployment of the application. The **POD** refers to the **configmap** for the configuration. Image used for the **POD** is **image: himadriganguly/sample_external_url**, change that according to your registry url.
 
-3. **Service** - This will expose the application as **ClusterIP** on **port 80** and **targetPort 8080**. Change the targetPort according to the **PORT** value in **configmap**.
+3. **Service** - This will expose the application as **ClusterIP** on **port 80** and **targetPort 8080**. Change the **targetPort** value according to the **PORT** value in **configmap**.
 
 ### Deploy The Application
 
@@ -185,6 +186,8 @@ helm repo update
 ```
 helm install grafana grafana/grafana
 ```
+
+**Note:-** [https://github.com/grafana/helm-charts/tree/main/charts/grafana](https://github.com/grafana/helm-charts/tree/main/charts/grafana)
 
 3. Get the login username and password
 
