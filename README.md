@@ -1,5 +1,5 @@
 # Sample External URL
-This is a sample application in **Python** which is collecting external **URL** metrics and producing prometheus format metrics at the endpoint **/metrics**.
+This is a sample application in **Python** which is collecting external **URL** metrics and producing prometheus format metrics at the endpoint **/metrics**. Prometheus is collecting the metrics from the endpoint and a dashboard in Grafana is used to display the metrics.
 
 The following **URLS** are being used as demo:-
 1. [https://httpstat.us/200](https://httpstat.us/200)
