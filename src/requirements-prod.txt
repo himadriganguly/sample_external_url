@@ -8,6 +8,6 @@ pluggy==0.13.1
 prometheus-client==0.10.1
 py==1.10.0
 pyparsing==2.4.7
-requests==2.25.1
+requests==2.31.0
 toml==0.10.2
 urllib3==1.26.5
