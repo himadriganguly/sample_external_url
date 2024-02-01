@@ -6,4 +6,4 @@ COPY src/ .
 
 RUN pip install -r requirements-prod.txt
 
-CMD ["python", "app.py"]
+CMD ["python", "app.py"] #test
