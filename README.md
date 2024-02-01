@@ -303,5 +303,3 @@ kubectl get svc
 3. Click on **Import** button it will create the dashboard with the **Prometheus** metrics.
 
 ![Import Grafan Dashboard Step3](https://raw.githubusercontent.com/himadriganguly/sample_external_url/main/screenshots/grafan-import-dashboard3.png "Import Grafan Dashboard Step3")
-
-test
